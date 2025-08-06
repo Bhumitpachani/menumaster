@@ -107,7 +107,9 @@ const restaurantSchema = new mongoose.Schema({
   address: String,
   contact: String,
   logo: String,
-  logoPublicId: String
+  logoPublicId: String,
+  theme: String
+  
 });
 
 // Models
