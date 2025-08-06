@@ -418,7 +418,7 @@ app.get('/api/restaurants', async (req, res) => {
 
 app.get('/api/restaurants/:id', async (req, res) => {
   try {
-    const restaurant = await Restaurant.findById(req.params.id);
+    const restaurant = await Restaurant.findOne({ adminId: req.params.id })
     if (!restaurant) return res.status(404).json({ error: 'Restaurant not found' });
     res.json(restaurant);
   } catch (error) {
